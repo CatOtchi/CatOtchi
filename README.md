@@ -4,10 +4,10 @@
 </picture>
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/bio-dark-mobile.svg?v=4">
-  <source media="(max-width: 600px)" srcset="./assets/bio-light-mobile.svg?v=4">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/bio-dark-desktop.svg?v=4">
-  <img src="./assets/bio-light-desktop.svg?v=4" width="900" alt="I'm a second-year electrical engineering student at UBC. Interested in ASICs, FPGAs, verification and IP development. I'm also into flying FPV drones, CFD and microsoldering. My main language is SystemVerilog. I also use C, Bash, some Python and Lua.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/bio-dark-mobile.svg?v=5">
+  <source media="(max-width: 600px)" srcset="./assets/bio-light-mobile.svg?v=5">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/bio-dark-desktop.svg?v=5">
+  <img src="./assets/bio-light-desktop.svg?v=5" width="900" alt="I'm a second-year electrical engineering student at UBC. Interested in ASICs, FPGAs, verification and IP development. I'm also into flying FPV drones, CFD and microsoldering. My main language is SystemVerilog. I also use C, Bash, some Python and Lua.">
 </picture>
 
 [LinkedIn ↗](https://www.linkedin.com/in/benjamin-miles/)

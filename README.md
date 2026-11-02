@@ -16,5 +16,5 @@
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/calendar-dark-mobile.svg">
   <source media="(max-width: 600px)" srcset="./assets/calendar-light-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/calendar-dark-desktop.svg">
-  <img src="./assets/calendar-light-desktop.svg" width="900" alt="91 public contributions in the last year. Contribution snapshot from 2026-11-02.">
+  <img src="./assets/calendar-light-desktop.svg" width="900" alt="94 public contributions in the last year. Contribution snapshot from 2026-11-02.">
 </picture>

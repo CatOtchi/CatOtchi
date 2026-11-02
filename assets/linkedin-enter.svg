@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="98" height="26" viewBox="0 0 98 26" role="img" aria-labelledby="title">
+  <title id="title">LinkedIn ↗</title>
+  <style>
+    .link { fill: #0969da; animation: link-enter 1.4s cubic-bezier(.2,.7,.3,1) 3.8s both; }
+    @keyframes link-enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-color-scheme: dark) { .link { fill: #58a6ff; } }
+    @supports (-moz-appearance: none) { .link { animation-name: link-fade; transform: none; } }
+    @keyframes link-fade { from { opacity: 0; } to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .link { animation: none; opacity: 1; transform: none; } }
+  </style>
+  <g class="link"><text x="1" y="18" font-family="Segoe UI,sans-serif" font-size="16" text-decoration="underline">LinkedIn ↗</text></g>
+</svg>

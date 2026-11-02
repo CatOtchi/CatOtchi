@@ -10,7 +10,7 @@
   <img src="./assets/bio-light-desktop-cat-enter.svg" width="900" alt="I'm a second-year electrical engineering student at UBC. Interested in ASICs, FPGAs, verification and IP development. I'm also into flying FPV drones, CFD and microsoldering. My main language is SystemVerilog. I also use C, Bash, some Python and Lua.">
 </picture>
 
-[LinkedIn ↗](https://www.linkedin.com/in/benjamin-miles/)
+[![LinkedIn ↗](./assets/linkedin-enter.svg)](https://www.linkedin.com/in/benjamin-miles/)
 
 <picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/calendar-dark-mobile.svg?v=3">

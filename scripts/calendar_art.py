@@ -41,19 +41,23 @@ def blue_calendar(source, mobile=False, light=False):
 <title id="title">{total} public contributions in the last year. {snapshot} snapshot.</title>
 <style>
 .active{{animation:breathe ease-in-out infinite}}
-.entrance{{animation:enter 1.4s cubic-bezier(.2,.7,.3,1) both}}
-.drift{{animation:scroll 60s linear infinite}}
+.caption{{animation:caption-fade 1.55s ease-out 1.5s both}}
+.entrance{{animation:enter 2.5s cubic-bezier(.2,.7,.3,1) 2.7s both}}
+.drift{{animation:scroll 60s linear 2s infinite}}
 @keyframes breathe{{0%,100%{{opacity:.62}}50%{{opacity:1}}}}
+@keyframes caption-fade{{from{{opacity:0}}to{{opacity:1}}}}
 @keyframes enter{{from{{opacity:0;transform:translateX(36px)}}to{{opacity:1;transform:translateX(0)}}}}
 @keyframes scroll{{from{{transform:translateX(0)}}to{{transform:translateX(-{width}px)}}}}
 @supports (-moz-appearance:none){{
   .entrance,.drift{{animation:none;opacity:1;transform:none}}
   .track-copy{{display:none}}
 }}
-@media(prefers-reduced-motion:reduce){{.active,.entrance,.drift{{animation:none;opacity:1;transform:none}}}}
+@media(prefers-reduced-motion:reduce){{.active,.entrance,.drift,.caption{{animation:none;opacity:1;transform:none}}}}
 </style>
+<g class="caption">
 <text x="4" y="23" font-family="monospace" font-size="{16 if mobile else 17}" fill="{ink}">{total} contributions</text>
 <text x="{width-4}" y="23" text-anchor="end" font-family="monospace" font-size="{14 if mobile else 15}" fill="{ink}">past year</text>
+</g>
 <g class="entrance"><g class="drift"><g id="tile-grid">''']
     for index, (day, level) in enumerate(days):
         phase = crc32(day.encode())

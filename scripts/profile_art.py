@@ -22,9 +22,9 @@ def main():
         delay = '3.4s' if mobile else '2.9s'
         distance = '12px' if mobile else '18px'
         transform = (
-            'translate(265 331) scale(.455)'
+            'translate(252 323) scale(.50)'
             if mobile else
-            'translate(632 108.93474283390933) scale(.8131734092295182)'
+            'translate(615 109) scale(.90)'
         )
         art = (
             f'{START}<style>'

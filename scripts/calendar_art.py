@@ -66,7 +66,7 @@ def blue_calendar(source, mobile=False, light=False):
 <text x="{width-4}" y="23" text-anchor="end" font-family="monospace" font-size="{14 if mobile else 15}" fill="{ink}">past year</text>
 </g>
 <g class="entrance"><g class="drift"><g id="tile-grid">''']
-        parts.append(f'''
+    parts.append(f'''
     <defs>
       <pattern id="idle-base" x="0" y="{top}" width="{step:.8f}" height="{step:.8f}" patternUnits="userSpaceOnUse">
         <rect width="{tile:.2f}" height="{tile:.2f}" rx="1.5" fill="{colors[0]}"/>

@@ -81,5 +81,5 @@ def blue_calendar(source, mobile=False, light=False):
             )
         else:
             animation = ''
-    parts.append(f'<rect x="{(index//7)*step:.2f}" y="{top+(index%7)*step:.2f}" width="{tile:.2f}" height="{tile:.2f}" rx="1.5" fill="{colors[level]}" {animation}><title>{day or "Unused day"}</title></rect>')
+        parts.append(f'<rect x="{(index//7)*step:.2f}" y="{top+(index%7)*step:.2f}" width="{tile:.2f}" height="{tile:.2f}" rx="1.5" fill="{colors[level]}" {animation}><title>{day or "Unused day"}</title></rect>')
     return ''.join(parts) + f'</g><use class="track-copy" href="#tile-grid" x="{width}" aria-hidden="true"/></g></g></svg>'

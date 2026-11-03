@@ -32,7 +32,12 @@ def blue_calendar(source, mobile=False, light=False):
     total = re.search(r'(\d[\d,]*)\s+contributions\s+in the last year', source).group(1)
     snapshot = re.search(r'data-to="(\d{4}-\d{2}-\d{2})', source).group(1)
     width, height = (420, 130) if mobile else (900, 190)
-    colors = ['#ebedf0', '#b8d4fb', '#79b2f8', '#438de6', '#0969da'] if light else ['#161b22', '#142b4b', '#22538b', '#397ccc', '#91bfff']
+    colors = (
+        ['#ebedf0', '#7fb1f2', '#4f93ee', '#2674d8', '#0b57c0']
+        if light else
+        ['#161b22', '#346aa6', '#4c85ca', '#75adf0', '#b2d4ff']
+    )
+    idle_blue = '#e3eaf5' if light else '#1c2838'
     ink = '#59636e' if light else '#9ba9bb'
     step = width / (len(days) // 7)
     tile = step - (2 if mobile else 3)
@@ -41,10 +46,12 @@ def blue_calendar(source, mobile=False, light=False):
 <title id="title">{total} public contributions in the last year. {snapshot} snapshot.</title>
 <style>
 .active{{animation:breathe ease-in-out infinite}}
+.idle-pulse{{animation:idle-breathe 20s ease-in-out infinite;pointer-events:none}}
+@keyframes idle-breathe{{0%,100%{{opacity:0}}50%{{opacity:.65}}}}
 .caption{{animation:caption-fade 1.55s ease-out 1.5s both}}
 .entrance{{animation:enter 2.5s cubic-bezier(.2,.7,.3,1) 2.7s both}}
 .drift{{animation:scroll 60s linear 2s infinite}}
-@keyframes breathe{{0%,100%{{opacity:.65}}50%{{opacity:1}}}}
+@keyframes breathe{{0%,100%{{opacity:.85}}50%{{opacity:1}}}}
 @keyframes caption-fade{{from{{opacity:0}}to{{opacity:1}}}}
 @keyframes enter{{from{{opacity:0;transform:translateX(36px)}}to{{opacity:1;transform:translateX(0)}}}}
 @keyframes scroll{{from{{transform:translateX(0)}}to{{transform:translateX(-{width}px)}}}}
@@ -59,8 +66,21 @@ def blue_calendar(source, mobile=False, light=False):
 <text x="{width-4}" y="23" text-anchor="end" font-family="monospace" font-size="{14 if mobile else 15}" fill="{ink}">past year</text>
 </g>
 <g class="entrance"><g class="drift"><g id="tile-grid">''']
+        parts.append(f'''
+    <defs>
+      <pattern id="idle-base" x="0" y="{top}" width="{step:.8f}" height="{step:.8f}" patternUnits="userSpaceOnUse">
+        <rect width="{tile:.2f}" height="{tile:.2f}" rx="1.5" fill="{colors[0]}"/>
+      </pattern>
+      <pattern id="idle-blue" x="0" y="{top}" width="{step:.8f}" height="{step:.8f}" patternUnits="userSpaceOnUse">
+        <rect width="{tile:.2f}" height="{tile:.2f}" rx="1.5" fill="{idle_blue}"/>
+      </pattern>
+    </defs>
+    <path d="M0 {top} H{width} V{top+7*step:.4f} H0 Z" fill="url(#idle-base)"/>
+    <path class="idle-pulse" d="M0 {top} H{width} V{top+7*step:.4f} H0 Z" fill="url(#idle-blue)"/>
+    ''')
     for index, (day, level) in enumerate(days):
         phase = crc32(day.encode())
         animation = f'class="active" style="animation-duration:{6.5+(phase % 501)/100:.2f}s;animation-delay:-{(phase % 14000)/1000:.3f}s"' if level else ''
-        parts.append(f'<rect x="{(index//7)*step:.2f}" y="{top+(index%7)*step:.2f}" width="{tile:.2f}" height="{tile:.2f}" rx="1.5" fill="{colors[level]}" {animation}><title>{day or "Unused day"}</title></rect>')
+        fill = colors[level] if level else 'transparent'
+        parts.append(f'<rect x="{(index//7)*step:.2f}" y="{top+(index%7)*step:.2f}" width="{tile:.2f}" height="{tile:.2f}" rx="1.5" fill="{fill}" {animation}><title>{day or "Unused day"}</title></rect>')
     return ''.join(parts) + f'</g><use class="track-copy" href="#tile-grid" x="{width}" aria-hidden="true"/></g></g></svg>'

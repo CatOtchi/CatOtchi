@@ -59,7 +59,7 @@ def blue_calendar(source, mobile=False, light=False):
   .entrance,.drift{{animation:none;opacity:1;transform:none}}
   .track-copy{{display:none}}
 }}
-@media(prefers-reduced-motion:reduce){{.active,.entrance,.drift,.caption{{animation:none;opacity:1;transform:none}}}}
+@media(prefers-reduced-motion:reduce){{.active,.entrance,.drift,.caption{{animation:none;opacity:1;transform:none}}.idle-pulse{{animation:none;opacity:0}}}}
 </style>
 <g class="caption">
 <text x="4" y="23" font-family="monospace" font-size="{16 if mobile else 17}" fill="{ink}">{total} contributions</text>

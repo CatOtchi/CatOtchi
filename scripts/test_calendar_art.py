@@ -17,7 +17,8 @@ class CalendarArtworkTests(unittest.TestCase):
             for light in [False, True]:
                 with self.subTest(mobile=mobile, light=light):
                     svg = ET.fromstring(blue_calendar(source, mobile=mobile, light=light))
-                    tiles = list(svg.iter('{http://www.w3.org/2000/svg}rect'))
+                    ns = '{http://www.w3.org/2000/svg}'
+                    tiles = [r for r in svg.iter(f'{ns}rect') if r.find(f'{ns}title') is not None]
                     self.assertEqual(len(tiles), 371, 'The final week must contain all seven tiles')
                     self.assertEqual(sum(tile.get('class') == 'active' for tile in tiles), 1)
                     self.assertTrue(all(tile.get('class') is None for tile in tiles[-5:]))

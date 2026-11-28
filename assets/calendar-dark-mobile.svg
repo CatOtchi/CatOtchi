@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="130" viewBox="0 0 420 130" role="img" aria-labelledby="title">
-<title id="title">230 public contributions in the last year. 2026-11-28 snapshot.</title>
+<title id="title">232 public contributions in the last year. 2026-11-28 snapshot.</title>
 <style>
 .active{animation:breathe ease-in-out infinite}
 .idle-pulse{animation:idle-breathe 20s ease-in-out infinite;pointer-events:none}
@@ -18,7 +18,7 @@
 @media(prefers-reduced-motion:reduce){.active,.entrance,.drift,.caption{animation:none;opacity:1;transform:none}.idle-pulse{animation:none;opacity:0}}
 </style>
 <g class="caption">
-<text x="4" y="23" font-family="monospace" font-size="16" fill="#9ba9bb">230 contributions</text>
+<text x="4" y="23" font-family="monospace" font-size="16" fill="#9ba9bb">232 contributions</text>
 <text x="416" y="23" text-anchor="end" font-family="monospace" font-size="14" fill="#9ba9bb">past year</text>
 </g>
 <g class="entrance"><g class="drift"><g id="tile-grid">

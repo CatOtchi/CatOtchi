@@ -13,8 +13,8 @@
 [![LinkedIn ↗](./assets/linkedin-enter.svg)](https://www.linkedin.com/in/benjamin-miles/)
 
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/calendar-dark-mobile.svg?v=3">
-  <source media="(max-width: 600px)" srcset="./assets/calendar-light-mobile.svg?v=3">
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/calendar-dark-desktop.svg?v=3">
-  <img src="./assets/calendar-light-desktop.svg?v=3" width="900" alt="229 public contributions in the last year. Contribution snapshot from 2026-11-28.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/calendar-dark-mobile.svg?v=e3f413999616">
+  <source media="(max-width: 600px)" srcset="./assets/calendar-light-mobile.svg?v=b93738f85abc">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/calendar-dark-desktop.svg?v=cf829703db1c">
+  <img src="./assets/calendar-light-desktop.svg?v=d88142e2438c" width="900" alt="229 public contributions in the last year. Contribution snapshot from 2026-11-28.">
 </picture>

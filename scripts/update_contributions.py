@@ -27,5 +27,5 @@ for theme in ['dark', 'light']:
 total = re.search(r'(\d[\d,]*)\s+contributions\s+in the last year', source).group(1)
 snapshot = re.search(r'data-to="(\d{4}-\d{2}-\d{2})', source).group(1)
 text = re.sub(r'alt="[\d,]+ public contributions in the last year\. Contribution snapshot from [^"]+"', f'alt="{total} public contributions in the last year. Contribution snapshot from {snapshot}."', text)
-readme.write_text(text, encoding='utf-8')
+readme.write_bytes(text.encode('utf-8'))
 print(f'Updated public contribution calendar: {total} contributions, {snapshot}')
